@@ -22,4 +22,12 @@ export class AuthService {
       this.privateHttpHeaders
     );
   }
+
+  register(data: any) {
+    return this.http.post(
+      this.baseUrl + 'api/auth/register',
+      data,
+      this.privateHttpHeaders
+    );
+  }
 }
