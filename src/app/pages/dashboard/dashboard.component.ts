@@ -7,12 +7,28 @@ import { PrivateService } from 'src/app/services/private.service';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  public users: any[] = [];
+  public users: any[] = [
+    {
+      firstName: 'Ana',
+      lastName: 'Ionescu',
+    },
+    {
+      firstName: 'Lucian',
+      lastName: 'Popescu',
+    },
+  ];
+  searchInput: string = '';
 
   constructor(private privateService: PrivateService) {}
 
   ngOnInit(): void {
-    this.getAllUsers();
+    //this.getAllUsers();
+  }
+
+  removeUser(firstName: string) {
+    this.users = this.users.filter((user) => {
+      return user.firstName !== firstName;
+    });
   }
 
   getAllUsers() {

@@ -10,6 +10,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpErrorsInterceptor } from './interceptors/http-errors.interceptor';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { SharedModule } from './shared/shared.module';
+import { SearchTextPipe } from './pipes/search-text.pipe';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
     RegisterComponent,
     DashboardComponent,
     ProfileComponent,
+    SearchTextPipe,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +28,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    SharedModule,
   ],
   providers: [
     {
